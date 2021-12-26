@@ -1,0 +1,14 @@
+columns:
+    title:
+        label: Название
+        type: text
+    link:
+        label: Ссылка
+        type: text
+    created_at:
+        label: Дата создания
+        type: datetime
+    updated_at:
+        label: Дата обновления
+        type: datetime
+

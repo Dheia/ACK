@@ -1,0 +1,18 @@
+{% for post in posts %}
+  <li class="w-full h-full">
+    <article 
+      class="relative w-full h-full py-3 px-2 blackout blackout--dark-blue bg-no-repeat bg-center bg-cover" 
+      style="background-image: url('{{ post.featured_images[0].path | resize(330, auto) }}');"
+    >
+      <div class="absolute bottom-3 left-3 right-3 z-20">
+        <h3 class="text-white text-sm lg:text-base font-mont font-bold mb-1">{{ post.title }}</h3>
+        <div class="text-white text-xs lg:text-sm font-mont font-normal leading-4 mb-2">
+          {{ post.summary | striptags | slice(0, 60) | raw  ~ '...' }}
+        </div>
+        <a class="text-white text-sm font-sans font-normal uppercase py-1 px-2 bg-transparent border border-white rounded" href="{{ post.url }}">Подробнее</a>
+      </div>
+    </article>
+  </li>
+{% else %}
+    <li class="text-center text-gray-500 text-base underline">{{ blogPosts.noPostsMessage }}</li>
+{% endfor %}

@@ -1,0 +1,11 @@
+{% for category in practices %}
+  <p>{{ category.title }}</p>
+  <p>{{ category.description | raw }}</p>
+  {% for practice in category.practices | length < 3 %}
+    <p>{{ practice.image.path }}</p>
+    <p>{{ practice.title }}</p>
+    <p>{{ practice.link }}</p>
+  {% endfor %}
+{% endfor %}
+
+{{ practice_items.render|raw }}

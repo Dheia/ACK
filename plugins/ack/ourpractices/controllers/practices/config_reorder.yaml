@@ -1,0 +1,4 @@
+title: Practices
+modelClass: Ack\OurPractices\Models\Practice
+toolbar:
+    buttons: reorder_toolbar

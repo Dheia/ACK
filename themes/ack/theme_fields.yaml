@@ -1,0 +1,251 @@
+tabs:
+    fields:
+
+        # Настройки сайта
+
+        site_settings:
+            tab: Главная
+            label: Настройки сайта
+            span: full
+            type: section
+
+        site_name:
+            tab: Главная
+            label: Название сайта
+            comment: Название сайта которое будет показываться во front-end
+            default: АЦК
+            span: auto
+            type: text
+
+        # Главная
+
+        # Баннер
+
+        banner_section:
+            tab: Главная
+            label: Секция "Баннер"
+            span: full
+            type: section
+
+        banner_image: 
+            tab: Главная
+            label: Изображение
+            span: storm
+            cssClass: col-md-12
+            type: mediafinder
+            mode: image
+
+        banner_title:
+            tab: Главная
+            label: Заголовок
+            span: storm
+            cssClass: col-md-4
+            type: text
+
+        banner_text:
+            tab: Главная
+            label: Текст
+            span: storm
+            cssClass: col-md-4
+            type: text
+        
+        banner_presentation:
+            tab: Главная
+            label: Презентация
+            span: storm
+            cssClass: col-md-4
+            type: mediafinder
+
+        # О нас
+
+        abouts_section:
+            tab: Главная
+            label: Секция "О нас"
+            span: full
+            type: section
+
+        abouts_background:
+            tab: Главная
+            label: Изображение
+            span: storm
+            cssClass: col-md-4
+            type: mediafinder
+            mode: image
+
+        abouts_description:
+            tab: Главная
+            label: Описание
+            span: storm
+            cssClass: col-md-8
+            type: richeditor
+
+        abouts_details:
+            tab: Главная
+            label: Ссылка на страницу
+            span: storm
+            cssClass: col-md-4
+            type: text
+            default: /o-nas
+
+        # НСИ Смартека
+        
+        nsi_section:
+            tab: Главная
+            label: Секция "НСИ Смартека"
+            span: full
+            type: section
+
+        nsi_background:
+            tab: Главная
+            label: Изображение
+            span: storm
+            cssClass: col-md-6
+            type: mediafinder
+            mode: image
+        nsi_backgroundMobile:
+            tab: Главная
+            label: Изображение для мобильной версии
+            span: storm
+            cssClass: col-md-6
+            type: mediafinder
+            mode: image
+
+        nsi_details:
+            tab: Главная
+            label: Ссылка на страницу
+            span: storm
+            cssClass: col-md-6
+            type: text
+            default: /nsi-smarteka
+        
+        site_smarteka:
+            tab: Главная
+            label: Ссылка на сайт Смартека
+            span: storm
+            cssClass: col-md-6
+            type: text
+            default: https://smarteka.com/
+
+        # Реквизиты
+        requisites_section:
+            tab: Главная
+            label: Секция "Реквизиты"
+            span: full
+            type: section
+
+        logo:
+            tab: Главная
+            label: Логотип
+            default: АЦК
+            span: storm
+            cssClass: col-md-3
+            type: mediafinder
+            mode: image
+
+        requisites:
+            tab: Главная
+            label: Реквизиты
+            span: storm
+            cssClass: col-md-5
+            type: richeditor
+
+        contacts:
+            tab: Главная
+            label: Контакты
+            span: storm
+            cssClass: col-md-4
+            type: richeditor
+
+        # Документы
+        documents_section:
+            tab: Главная
+            label: Секция "Документы"
+            span: full
+            type: section       
+
+        documents:
+            tab: Главная
+            label: Список документов
+            span: full
+            type: repeater    
+            style: collapsed 
+            form:
+                fields:
+                    title:
+                        label: Заголовок
+                        span: full
+                        type: text  
+                    document:
+                        label: Документ
+                        span: full
+                        type: mediafinder   
+
+        # О нас
+        
+        abouts_section:
+            tab: О нас
+            label: Страница "О нас"
+            span: full
+            type: section    
+
+        firstImage:
+            tab: О нас
+            span: storm
+            cssClass: col-md-5
+            type: mediafinder  
+            mode: image 
+        firstDescription:
+            tab: О нас
+            span: storm
+            cssClass: col-md-7
+            type: richeditor    
+        
+        secondDescription:
+            tab: О нас
+            span: storm
+            cssClass: col-md-7
+            type: richeditor    
+        secondImage:
+            tab: О нас
+            span: storm
+            cssClass: col-md-5
+            type: mediafinder  
+            mode: image  
+
+        # Наши практики
+
+        practicesPage_section:
+            tab: Наши практики
+            label: Страница "Наши практики"
+            span: full
+            type: section  
+
+        practicesPage_image:
+            tab: Наши практики
+            label: Изображение
+            span: storm
+            cssClass: col-md-12
+            type: mediafinder
+            mode: image
+
+        # НСИ Смартека
+
+        nsiPage_section:
+            tab: НСИ Смартека
+            label: Страница "НСИ Смартека"
+            span: full
+            type: section  
+
+        nsiPage_image:
+            tab: НСИ Смартека
+            label: Изображение
+            span: storm
+            cssClass: col-md-12
+            type: mediafinder
+            mode: image
+
+        nsiPage_description:
+            tab: НСИ Смартека
+            label: Описание "НСИ Смартека"
+            span: full
+            type: richeditor 

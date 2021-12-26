@@ -1,0 +1,14 @@
+url = "/error"
+layout = "default"
+title = "Ошибка сервера(500)"
+==
+<?php
+function onStart () {
+  $this['showTitle'] = true;
+}
+?>
+==
+<div class="text-center">
+  <h1 class="text-3xl uppercase">Страница недоступна</h1>
+  <p class="text-lg">К сожалению, что-то пошло не так, страница не может быть отображена.</p>
+</div>

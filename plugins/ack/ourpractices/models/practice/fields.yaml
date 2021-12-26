@@ -1,0 +1,42 @@
+fields:
+    image_section:
+        type: section
+        label: Изображение
+    image:
+        type: fileupload
+        mode: image
+        comment: Добавьте изображение
+        required: true
+    title_section:
+        type: section
+        label: Заголовок и ссылка
+    title:
+        label: Заголовок
+        span: left
+        type: text
+        required: true
+    link:
+        label: Ссылка
+        span: auto
+        required: true
+    categories_section:
+        type: section
+        label: Категория
+    categories:
+        span: full
+        type: relation
+        nameFrom: title
+        required: true
+        comment: Выберите категорию
+    created_at:
+        label: 'Дата создания'
+        span: auto
+        type: datepicker
+        mode: date
+        default: now
+    updated_at:
+        label: 'Дата обновления'
+        span: auto
+        type: datepicker
+        mode: date
+        default: now

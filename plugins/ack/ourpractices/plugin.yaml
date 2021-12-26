@@ -1,0 +1,20 @@
+plugin:
+    name: 'ack.ourpractices::lang.plugin.name'
+    description: 'ack.ourpractices::lang.plugin.description'
+    author: ACK
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    practices-menu-item:
+        label: Практики
+        url: ack/ourpractices/practices
+        icon: icon-life-ring
+        sideMenu:
+            practices:
+                label: Практики
+                url: ack/ourpractices/practices
+                icon: icon-sitemap
+            categories:
+                label: Категории
+                url: ack/ourpractices/categories
+                icon: icon-sitemap

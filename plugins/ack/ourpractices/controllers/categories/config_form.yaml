@@ -1,0 +1,10 @@
+name: Categories
+form: $/ack/ourpractices/models/category/fields.yaml
+modelClass: Ack\OurPractices\Models\Category
+defaultRedirect: ack/ourpractices/categories
+create:
+    redirect: 'ack/ourpractices/categories/update/:id'
+    redirectClose: ack/ourpractices/categories
+update:
+    redirect: ack/ourpractices/categories
+    redirectClose: ack/ourpractices/categories

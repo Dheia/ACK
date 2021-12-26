@@ -1,0 +1,13 @@
+<footer id="requisites" class="bg-blue-primary-100 py-4 px-5 md:py-14">
+  <div class="container flex flex-col gap-6 items-center md:flex-row justify-between md:items-start">
+    <img src="{{ this.theme.logo | media }}" alt="">
+    <div class="text-center text-white text-xs md:text-sm font-sans font-normal leading-6">
+      <h2 class="text-center text-white text-lg lg:text-2xl font-sans font-normal uppercase mb-2">Реквизиты АНО «АЦК»</h2>
+      {{ this.theme.requisites | raw }}      
+    </div>
+    <div class="text-center text-white text-xs md:text-sm font-sans font-normal leading-6">
+      <h2 class="text-center text-white text-lg lg:text-2xl font-sans font-normal uppercase mb-2">Контакты</h2>
+      {{ this.theme.contacts | raw }}
+    </div>
+  </div>
+</footer>

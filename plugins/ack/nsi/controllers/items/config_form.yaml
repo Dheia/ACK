@@ -1,0 +1,10 @@
+name: Items
+form: $/ack/nsi/models/item/fields.yaml
+modelClass: Ack\Nsi\Models\Item
+defaultRedirect: ack/nsi/items
+create:
+    redirect: 'ack/nsi/items/update/:id'
+    redirectClose: ack/nsi/items
+update:
+    redirect: ack/nsi/items
+    redirectClose: ack/nsi/items

@@ -1,0 +1,10 @@
+columns:
+    title:
+        label: Название
+        type: text
+    created_at:
+        label: Дата создания
+        type: datetime
+    updated_at:
+        label: Дата обновления
+        type: datetime

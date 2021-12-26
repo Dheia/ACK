@@ -1,0 +1,47 @@
+url = "/post/:slug"
+layout = "default"
+title = "Пост"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+==
+<?php
+function onEnd() {
+    if (isset($this->post))
+        $this->page->title = $this->post->title;
+}
+function onStart () {
+    $this['showTitle'] = true;
+}
+?>
+==
+{% set post = blogPost.post %}
+
+<h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">{{ psot.title }}</h2>
+
+<div class="text-xs lg:text-lg text-black font-sans font-normal text-justify mb-2 lg:mb-4">
+    {% if post.featured_images %}
+        <img class="float-left max-w-[40%] lg:max-w-[50%] mr-2 mb-2 lg:mr-8 lg:mb-8" src="{{ post.featured_images[0].path | resize(280, 230) }}" alt="{{ post.title }}">
+    {% endif %}
+    {{ post.content_html|raw }}
+</div>
+
+{% if post.featured_images.count  %}
+    <div class="swiper gallery-slider w-full">
+        <div class="swiper-wrapper">
+            {% for image in post.featured_images %}
+                <div class="swiper-slide">
+                    <a 
+                        class="relative block w-full h-0 pb-[100%] bg-cover bg-center bg-no-repeat swiper-lazy" 
+                        data-lightbox="roadtrip" 
+                        href="{{ image.path }}"
+                        style="background-image: url('{{ image.path | resize(250, 250) }}');"
+                    >
+                    </a>    
+                    <div class="swiper-lazy-preloader"></div>         
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

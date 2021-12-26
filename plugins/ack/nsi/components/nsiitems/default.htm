@@ -1,0 +1,13 @@
+{% for item in nsi_items %}
+  {{ item.title }}
+  {{ item.description | raw }}
+  {{ item.report.path }}
+
+  {% for photoBefore in item.photos_before %}
+    {{ photoBefore.path }}
+  {% endfor %}
+
+  {% for photoAfter in item.photos_after %}
+    {{ photoAfter.path }}
+  {% endfor %}
+{% endfor %}

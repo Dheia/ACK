@@ -1,0 +1,23 @@
+<header class="py-1 px-5 bg-blue-primary-100">
+  <div class="relative container mx-auto flex justify-between items-center">
+    <a href="/">
+      <picture>
+        <source srcset="{{ this.theme.logo | media | resize(52, auto) }}" media="(max-width: 768px)">
+        <source srcset="{{ this.theme.logo | media | resize(108, auto) }}" media="(min-width: 1036px)">
+        <img src="{{ 'assets/img/logo.png' | theme }}" alt="{{ this.theme.site_name }}">
+       </picture>
+    </a>
+    <nav class="menu transition-opacity duration-500 ease-linear -md:opacity-0 z-50 min-w-[180px] -md:invisible -md:absolute -md:top-10 -md:right-0 -md:p-3 -md:bg-white -md:rounded">
+    {% if staticMenu.menuItems %}
+        <ul class="flex flex-col md:flex-row gap-4 md:gap-7 lg:gap-12">
+            {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+        </ul>
+    {% endif %}
+    </nav>
+    <button class="hamburger md:hidden h-8 w-8 bg-blue-light-100 rounded-full flex justify-center items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>

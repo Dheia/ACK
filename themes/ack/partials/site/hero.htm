@@ -1,0 +1,45 @@
+<section 
+  class="relative mt-1 py-3 md:py-5 lg:py-24 h-[196px] lg:h-[746px] bg-cover bg-center bg-no-repeat blackout blackout--primary" 
+  style="background-image: url('{{ hero_image == null ? this.theme.banner_image | media | resize(1920, 746) : hero_image | resize(1920, 746) }}');"
+>
+  <div class="z-20 relative flex flex-col h-full">
+    
+    {% if showTitle %}
+      <span class="block text-center text-white text-lg lg:text-5xl font-mont font-semibold uppercase py-3 lg:py-14 bg-blue-dark-60">
+        {{ this.page.title }}
+      </span>
+    {% endif %}
+    {% if showTiles %}
+      <div class="grid grid-cols-[120px_120px] lg:grid-cols-[325px_325px] m-auto gap-3 lg:gap-7">
+        <a class="relative block w-full h-0 pb-[100%] bg-cover bg-center bg-no-repeat rounded-lg bg-blue-light-40 drop-shadow-md" href="/nsi-smarteka/practices">
+          <img class="absolute inset-0 w-full h-full" src="{{ 'assets/img/human.svg' | theme }}" alt="">
+          <span class="absolute bottom-3 block w-full text-center text-white text-xs lg:text-2xl text-shadow font-sans font-bold uppercase">Наши практики</span>
+        </a>
+        <a class="relative block w-full h-0 pb-[100%] bg-cover bg-center bg-no-repeat rounded-lg bg-blue-light-40 drop-shadow-md" href="/nsi">
+          <img class="absolute inset-0 w-full h-full" src="{{ 'assets/img/hands.svg' | theme }}" alt="">
+          <span class="absolute bottom-3 block w-full text-center text-white text-xs lg:text-2xl text-shadow font-sans font-bold uppercase">Национальная социальная инициатива</span>
+        </a>
+      </div>
+    {% endif %}
+    {% if showButton %}
+      <a 
+        class="relative w-max mt-auto mb-0 mx-auto flex gap-5 items-center rounded-md bg-blue-light-40 drop-shadow-md py-2 px-4" 
+        href="{{ this.theme.banner_presentation | media }}"
+        target="_blank"
+      >
+        <span class="text-white text-xs lg:text-2xl text-shadow font-sans font-bold uppercase mr-10">Смотреть презентацию</span>
+        <span class="absolute right-4 flex justify-center items-center w-8 h-8 bg-blue-dark-100 rounded-full p-2 button-shadow">
+          <svg class="h-4 w-4 text-white" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+          </svg>
+        </span>
+      </a>
+    {% endif %}
+    {% if showText %}
+      <div class="flex flex-col gap-2 lg:gap-4 lg:container mt-auto px-5 max-w-[80%]">
+        <p class="text-white text-sm lg:text-4xl font-mont font-bold">{{ this.theme.banner_title }}</p>
+        <p class="text-white text-sm lg:text-4xl font-mont font-medium">{{ this.theme.banner_text }}</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

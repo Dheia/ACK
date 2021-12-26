@@ -1,0 +1,25 @@
+url = "/nsi-smarteka/practices/:slug?"
+layout = "default"
+title = "Категория практик"
+
+[Practices]
+pageNumber = "{{ :page }}"
+slug = "{{ :slug }}"
+practicesPerPage = 
+type = "category"
+==
+<?php
+function onEnd() {
+   if ($this->category)
+      $this->page->title = $this->category->title;
+}
+function onStart () {
+   $current_theme = Cms\Classes\Theme::getEditTheme();
+   $this['hero_image'] = \Media\Classes\MediaLibrary::url($current_theme->practicesPage_image);  
+   $this['showTitle'] = true;
+   $this['showButton'] = true;
+ }
+?>
+==
+<h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">{{ this.page.title }}</h2>
+{% component 'Practices' %}

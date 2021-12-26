@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% if this.page.meta_title != null %} {% set meta_title = this.page.meta_title %} {% else %} {% set meta_title = this.page.title %} {% endif %}
+<meta name="title" content="{{ meta_title }}">
+<meta name="description" content="{{ this.page.meta_description }}">
+<meta name="keywords" content="{{ this.page.meta_keywords }}"> 
+<link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | theme }}" type="image/png">
+<title>{{ this.page.url == '/' ? this.theme.site_name : meta_title ~ ' - ' ~ this.theme.site_name }}</title>
+
+<link rel="stylesheet" href="{{ '/assets/css/app.css' | theme }}">

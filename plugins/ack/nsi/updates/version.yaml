@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table ack_nsi_items'
+    - builder_table_create_ack_nsi_items.php

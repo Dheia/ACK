@@ -1,0 +1,105 @@
+url = "/"
+layout = "default"
+title = "Главная"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "novosti"
+postsPerPage = 3
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<?php
+function onStart () {
+  $this['showText'] = true;
+}
+?>
+==
+<section id="about-us" class="flex flex-wrap bg-blue-light-100 mt-1 lg:mt-5">
+  <div class="w-full sm:w-3/5 px-3 py-3 sm:px-9 sm:py-5">
+    <div class="w-auto max-w-xl ml-auto mr-0 blackout blackout--gradient">
+      <h2 class="text-center text-white text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">О нас</h2>
+      <div class="text-justify text-white text-xs lg:text-lg font-sans font-normal leading-5 py-1 mb-2">
+        {{ this.theme.abouts_description | raw }}
+      </div>
+      <a href="{{ this.theme.abouts_details }}" class="relative z-20 block max-w-max mx-auto py-1 px-3 lg:py-2 lg:px-6 text-black text-xs lg:text-lg font-sans font-normal leading-5 bg-white rounded-md shadow-black">Подробнее</a>
+    </div>
+   </div>
+
+  <div 
+    class="w-full sm:w-2/5 min-h-[105px] bg-no-repeat bg-cover bg-center blackout blackout--blue"
+    style="background-image: url('{{ this.theme.abouts_background | media | resize(830, auto) }}');" 
+  >
+  </div>
+</section>
+
+<section id="news" class="py-4 px-5 md:py-6">
+  <h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">Новости</h2>
+  <div class="container flex flex-wrap">
+    <div class="flex-grow w-full md:w-4/6">
+      <ul class="news-list grid grid-cols-2 sm:grid-cols-3 gap-1 auto-rows-[185px] sm:auto-rows-[275px]">
+        {% partial 'blog/posts' %}
+      </ul>
+    </div>
+    <div class="flex flex-col justify-end w-full md:w-2/6">
+      <a class="w-max mt-2 mb-0 mx-auto flex gap-2 items-center py-2 px-3 bg-white rounded border border-black shadow-black" href="/novosti">
+        <span class="text-black text-base lg:text-lg font-sans font-normal leading-4">Все новости</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white bg-black rounded-sm p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section 
+  id="nsi-smarteka" 
+  class="py-4 px-5 md:py-6 blackout blackout--gradient-blue bg-no-repeat bg-center bg-cover" 
+  style="background-image: url('{{ this.theme.nsi_background | media | resize(1920, auto) }}');"
+>
+  <div class="container">
+    <h2 class="text-center text-white text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">НСИ Смартека</h2>
+    <p class="text-center text-white font-sans font-normal text-base lg:text-3xl">Смартека- это сервис по поиску лучших практик в различных отраслях для решения социально- экономических задач.</p>
+    <p class="text-center text-white font-sans font-normal text-sm lg:text-2xl mt-1 lg:mt-2">Предназначена для лидеров изменений: глав регионов, их управленческих команд и всех неравнодушных людей.</p>
+    <p class="text-left  text-white font-sans font-normal text-sm lg:text-lg mt-3 md:mt-6">На текущий момент от Мурманской области опубликовано 11 практик, 6 из них внедряется на территории 5 субъектов Российской Федерации. В Мурманской области внедряется 8 практик из других регионов.</p>
+    <div class="relative z-20 flex flex-col md:flex-row gap-6 items-center justify-between mt-6">
+      <a class="w-max flex gap-2 items-center py-2 px-3 bg-white rounded shadow-light-blue" href="{{ this.theme.nsi_details }}">
+        <span class="text-black text-base lg:text-lg font-sans font-normal ">Подробнее</span>
+      </a>
+      <a class="w-max flex gap-2 items-center py-2 px-3 bg-blue-dark-100 rounded shadow-black" href="{{ this.theme.site_smarteka }}">
+        <span class="text-white text-base lg:text-lg font-sans font-normal">Перейти на сайт Смартека</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white bg-blue-dark-light shadow-black rounded-sm p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="documents" class="py-4 px-5 md:py-6">
+  <div class="container">
+    <h2 class="text-center text-black text-lg lg:text-2xl font-sans font-normal mb-2">Документы</h2>   
+    {% if this.theme.documents %}
+    <div class="swiper documents-slider">
+      <div class="swiper-wrapper">
+        {% for item in this.theme.documents  %}
+        <div class="swiper-slide p-1">
+          <a 
+            class="bg-white shadow-black h-[210px] md:h-[340px] w-full flex items-center"
+            href="{{ item.document | media }}"
+          >
+            <span class="mx-auto my-auto text-black text-lg font-sans font-normal">
+              {{ item.title }}
+            </span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+

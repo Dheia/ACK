@@ -1,0 +1,11 @@
+plugin:
+    name: 'ack.nsi::lang.plugin.name'
+    description: 'ack.nsi::lang.plugin.description'
+    author: ACK
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    nsi-menu:
+        label: НСИ
+        url: ack/nsi/items
+        icon: icon-life-ring

@@ -1,0 +1,17 @@
+url = "/nsi-smarteka"
+layout = "default"
+title = "НСИ Смартека"
+==
+<?php
+function onStart () {
+  $current_theme = Cms\Classes\Theme::getEditTheme();
+  $this['hero_image'] = \Media\Classes\MediaLibrary::url($current_theme->practicesPage_image);
+  $this['showTiles'] = true;
+  $this['showButton'] = true;
+}
+?>
+==
+<h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">{{ this.page.title }}</h2>
+<div class="text-justify text-black text-lg font-sans font-normal leading-5">
+  {{ this.theme.nsiPage_description | raw }}
+</div>

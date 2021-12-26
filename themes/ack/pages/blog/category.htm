@@ -1,0 +1,52 @@
+url = "/:category"
+layout = "default"
+title = "Категория"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :category }}"
+postsPerPage = 1
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<?php
+function onEnd() {
+  if ($this->category)
+    $this->page->title = $this->category->name;
+}
+function onStart () {
+  $this['showText'] = true;
+}
+function onLoadMore() {
+  $pageNumber = Input::get('page') + 1; 
+  $this->components['blogPosts']->setProperty('pageNumber', $pageNumber);
+  $this->components['blogPosts']->onRun();
+  if ($pageNumber < $this->components['blogPosts']->posts->lastPage()) {
+    $more_link = '<a class="load-more" data-request="onLoadMore" data-request-data="page: ' . $pageNumber . '" href="#">Показать еще</a>';
+  } else {
+    $more_link = '';
+  }
+  return [
+    '@#all-posts-content' => $this->components['blogPosts']->renderPartial('blog/posts.htm'),
+    '#load-more-button' => $more_link,
+  ];
+}
+==
+{% set posts = blogPosts.posts %}
+
+<h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">{{ this.page.title }}</h2>
+<ul id="all-posts-content" class="grid grid-cols-2 sm:grid-cols-3 auto-rows-[400px] gap-1">
+  {% partial 'blog/posts' %}
+</ul>
+
+<div id="load-more-button">
+  <a class="load-more" 
+    href="#"
+    data-request="onLoadMore"
+    data-request-data="page: 1"
+  >
+    Показать еще
+  </a>
+</div>

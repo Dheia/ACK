@@ -1,0 +1,16 @@
+url = "/nsi"
+layout = "default"
+title = "Национальная социальная инициатива"
+
+[NSIItems]
+==
+<?php
+function onStart () {
+  $current_theme = Cms\Classes\Theme::getEditTheme();
+  $this['hero_image'] = \Media\Classes\MediaLibrary::url($current_theme->nsiPage_image);
+  $this['showTitle'] = true;
+  $this['showButton'] = true;
+}
+?>
+==
+{% component 'NSIItems' %}

@@ -1,0 +1,54 @@
+{% if practices_type == 'list' %}
+  {% for category in practices %}
+    <section class="mt-6">
+      <h2 class="text-center text-lg lg:text-3xl text-black font-sans font-normal py-2 bg-blue-light-20">
+        {{ category.title }}
+      </h2>
+      <div class="text-center text-sm lg:text-2xl text-black font-sans font-normal mt-1 mb-3">
+        {{ category.description | raw }}
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 auto-rows-[180px] sm:auto-rows-[295px] gap-1">
+        {% for practice in category.practices | slice(0, 8) %}
+          <a 
+            class="relative group block rounded-lg w-full h-full bg-no-repeat bg-center bg-cover blackout blackout--blue hover:blackout--pink overflow-auto px-2 pt-9" 
+            style="background-image: url('{{ practice.image.path | resize(260, 295) }}');"
+            href="{{ practice.link }}" 
+            target="_blank"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="z-20 absolute top-2 right-1 h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span class="z-20 relative group-hover:underline block text-center text-white text-xs md:text-lg text-shadow font-bold">
+              {{ practice.title }}
+            </span>
+          </a>
+        {% endfor %}
+      </div>
+
+      <a class="load-more" 
+        href="/nsi-smarteka/practices/{{ category.slug }}"
+      >
+        Показать еще
+      </a>
+    </section>
+  {% endfor %}
+{% else %}
+<div class="grid grid-cols-2 sm:grid-cols-4 auto-rows-[180px] sm:auto-rows-[295px] gap-1">
+  {% for practice in practice_items %}
+    <a 
+      class="relative group block rounded-lg w-full h-full bg-no-repeat bg-center bg-cover blackout blackout--blue hover:blackout--pink overflow-auto px-2 pt-9" 
+      style="background-image: url('{{ practice.image.path }}');"
+      href="{{ practice.link }}" 
+      target="_blank"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="z-20 absolute top-2 right-1 h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+      <span class="z-20 relative group-hover:underline block text-center text-white text-xs md:text-lg text-shadow font-bold">
+        {{ practice.title }}
+      </span>
+    </a>
+  {% endfor %}
+</div>
+{% endif %}

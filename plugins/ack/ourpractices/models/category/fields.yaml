@@ -1,0 +1,37 @@
+fields:
+    title_section:
+        label: Название и ссылка
+        type: section
+    title:
+        label: Название
+        span: auto
+        type: text
+        required: true
+    slug:
+        label: Ссылка
+        span: auto
+        required: true
+        preset:
+            field: title
+            type: slug
+    description_section:
+        label: Описание категории
+        type: section
+    description:    
+        span: full
+        type: richeditor
+    date_section:
+        label: Дата
+        type: section
+    created_at:
+        label: Дата создания
+        span: auto
+        type: datepicker
+        mode: date
+        default: now
+    updated_at:
+        label: Дата обновления
+        span: auto
+        type: datepicker
+        mode: date
+        default: now

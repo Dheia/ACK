@@ -1,0 +1,45 @@
+fields:
+    title_section: 
+        type: section
+        label: Заголовок и описание
+    title:
+        label: Заголовок
+        span: full
+        type: text
+    description:
+        label: Описание
+        span: full
+        type: richeditor
+
+    report_section:
+        type: section
+        label: Отчет
+    report:
+        label: Отчет по реализации проекта  
+        span: full
+        type: fileupload
+        fileTypes: doc, docx, pdf
+    photos_before:
+        label: Фото "До"
+        span: full
+        type: fileupload
+        mode: image  
+    photos_after:
+        label: Фото "После"
+        span: full
+        type: fileupload
+        mode: image  
+    
+    date_section:
+        type: section
+        label: Дата
+    created_at:
+        label: Дата создания
+        span: auto
+        type: datepicker
+        default: now
+    updated_at:
+        label: Дата обновления
+        span: auto
+        type: datepicker
+        default: now

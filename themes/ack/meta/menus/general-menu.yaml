@@ -1,0 +1,47 @@
+items:
+    -
+        title: 'О нас'
+        type: url
+        url: '#about-us'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Новости
+        type: url
+        url: '#news'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'НСИ Смартека'
+        type: url
+        url: '#nsi-smarteka'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Документы
+        type: url
+        url: '#documents'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Реквизиты
+        type: url
+        url: '#requisites'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Основное меню'

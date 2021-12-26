@@ -1,0 +1,25 @@
+title = "О нас"
+layout = "default"
+url = "/o-nas"
+==
+<?php
+function onStart () {
+  $this['showText'] = true;
+}
+?>
+==
+<h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">О нас</h2>
+<div class="grid grid-cols-1 lg:grid-cols-[390px_auto] gap-5">
+  <div class="order-2 lg:order-1">
+    <img src="{{ this.theme.firstImage | media }}" alt="">
+  </div>
+  <div class="order-1 lg:order-2 text-justify text-black text-lg font-sans font-normal leading-4">
+    {{ this.theme.firstDescription | raw }}
+  </div>
+  <div class="order-3 lg:order-3 text-justify text-black text-lg font-sans font-normal leading-4">
+    {{ this.theme.secondDescription | raw }}
+  </div>
+  <div class="order-4 lg:order-4">
+    <img src="{{ this.theme.secondImage | media }}" alt="">
+  </div>
+</div>

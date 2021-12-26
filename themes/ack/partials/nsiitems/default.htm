@@ -1,0 +1,64 @@
+{% for item in nsi_items %}
+<section class="mt-6">
+  <h2 class="text-center text-lg lg:text-3xl text-black font-sans font-normal py-2 sm:px-28 bg-blue-light-20">
+    {{ item.title }}
+  </h2>
+  <div class="text-center text-sm lg:text-2xl text-black font-sans font-normal sm:px-28 mt-1 mb-3">
+    {{ item.description | raw }}
+  </div>
+  {% if item.report.path %}
+  <div class="py-4 md:py-7 px-5 rounded-lg bg-blue">
+    <div class="flex -xs:flex-col gap-4 justify-between items-center mx-auto md:mx-0">
+      <span class="flex flex-shrink flex-grow font-sans font-normal text-sm lg:text-2xl text-white">Отчет по реализации проекта </span>
+      <div class="flex justify-between items-center gap-4">
+        <a class="block font-sans font-medium text-xs md:text-sm text-black rounded-sm bg-white button-shadow py-1 md:py-2 px-2 md:px-12" href="{{ item.report.path }}" target="_blank">Открыть</a>
+        <a class="block font-sans font-medium text-xs md:text-sm text-black rounded-sm bg-white button-shadow py-1 md:py-2 px-2 md:px-12" href="{{ item.report.path }}" download="">Скачать</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 my-6 lg:mb-4">Фотоотчет</h2>
+  
+  {% if item.photos_before.count  %}
+    <span class="block text-sm md:text-2xl text-black border-b border-blue font-sans font-normal my-3 md:my-6">До</span>
+    <div class="swiper gallery-slider">
+      <div class="swiper-wrapper">
+        {% for image in item.photos_before %}
+          <div class="swiper-slide">
+            <a 
+                class="relative block w-full h-0 pb-[100%] bg-cover bg-center bg-no-repeat swiper-lazy" 
+                data-lightbox="photos_before" 
+                href="{{ image.path }}"
+                style="background-image: url('{{ image.path | resize(250, 250) }}');"
+            >
+            </a>    
+            <div class="swiper-lazy-preloader"></div>         
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if item.photos_after.count  %}
+    <span class="block text-sm md:text-2xl text-black border-b border-blue font-sans font-normal my-3 md:my-6">После</span>
+    <div class="swiper gallery-slider">
+      <div class="swiper-wrapper">
+        {% for image in item.photos_after %}
+          <div class="swiper-slide">
+            <a 
+                class="relative block w-full h-0 pb-[100%] bg-cover bg-center bg-no-repeat swiper-lazy" 
+                data-lightbox="photos_after" 
+                href="{{ image.path }}"
+                style="background-image: url('{{ image.path | resize(250, 250) }}');"
+            >
+            </a>    
+            <div class="swiper-lazy-preloader"></div>         
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  
+</section>
+{% endfor %}

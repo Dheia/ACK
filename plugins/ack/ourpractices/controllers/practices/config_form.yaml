@@ -1,0 +1,10 @@
+name: Practices
+form: $/ack/ourpractices/models/practice/fields.yaml
+modelClass: Ack\OurPractices\Models\Practice
+defaultRedirect: ack/ourpractices/practices
+create:
+    redirect: 'ack/ourpractices/practices/update/:id'
+    redirectClose: ack/ourpractices/practices
+update:
+    redirect: ack/ourpractices/practices
+    redirectClose: ack/ourpractices/practices

@@ -1,0 +1,27 @@
+description = "Макет по умолчанию"
+
+[staticPage]
+useContent = 1
+default = 0
+
+[staticMenu]
+code = "general-menu"
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% partial "common/head" %}
+</head>
+<body>
+    {% partial "common/header" %}
+    
+    {% partial 'site/hero' %}
+    <main
+        {{ this.page.url == '/' ? '' : ' class="py-4 md:py-6 -md:px-5 container"' }}
+    >
+        {% page %}
+    </main>
+    {% partial "common/footer" %}
+</body>
+    {% partial "common/scripts" %}
+</html>
