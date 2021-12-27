@@ -1,5 +1,5 @@
 {% for item in items if not item.viewBag.isHidden %}
-    <li class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+    <li>
         {% if item.url %}
             <a class="text-black md:text-white text-lg lg:text-xl font-normal font-sans" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
                 {{ item.title }}

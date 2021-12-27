@@ -85,7 +85,7 @@ tabs:
             span: storm
             cssClass: col-md-4
             type: text
-            default: /o-nas
+            default: /about-us
 
         # НСИ Смартека
         

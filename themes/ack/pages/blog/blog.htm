@@ -1,10 +1,9 @@
-url = "/blog/:category"
+url = "/blog"
 layout = "default"
-title = "Категория"
+title = "Новости"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-categoryFilter = "{{ :category }}"
 postsPerPage = 8
 noPostsMessage = "Записей не найдено"
 sortOrder = "published_at desc"
@@ -12,11 +11,6 @@ categoryPage = "blog/category"
 postPage = "blog/post"
 ==
 <?php
-function onEnd()
-{
-    if ($this->category)
-        $this->page->title = $this->category->name;
-}
 function onStart () {
   $this['showText'] = true;
 }

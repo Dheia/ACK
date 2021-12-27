@@ -8,11 +8,13 @@
        </picture>
     </a>
     <nav class="menu transition-opacity duration-500 ease-linear -md:opacity-0 z-50 min-w-[180px] -md:invisible -md:absolute -md:top-10 -md:right-0 -md:p-3 -md:bg-white -md:rounded">
-    {% if staticMenu.menuItems %}
         <ul class="flex flex-col md:flex-row gap-4 md:gap-7 lg:gap-12">
-            {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
-        </ul>
-    {% endif %}
+            {% if this.page.url == "/" %}
+              {% partial 'staticmenu/items' items=generalMenu.menuItems %}
+            {% else %}
+              {% partial 'staticmenu/items' items=secondaryMenu.menuItems %}
+            {% endif %}
+          </ul>
     </nav>
     <button class="hamburger md:hidden h-8 w-8 bg-blue-light-100 rounded-full flex justify-center items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
