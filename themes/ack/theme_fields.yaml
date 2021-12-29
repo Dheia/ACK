@@ -188,29 +188,12 @@ tabs:
             span: full
             type: section    
 
-        firstImage:
+        aboutsDescription:
             tab: О нас
             span: storm
-            cssClass: col-md-5
-            type: mediafinder  
-            mode: image 
-        firstDescription:
-            tab: О нас
-            span: storm
-            cssClass: col-md-7
-            type: richeditor    
-        
-        secondDescription:
-            tab: О нас
-            span: storm
-            cssClass: col-md-7
-            type: richeditor    
-        secondImage:
-            tab: О нас
-            span: storm
-            cssClass: col-md-5
-            type: mediafinder  
-            mode: image  
+            cssClass: col-md-12
+            type: richeditor
+            size: giant
 
         # Наши практики
 
