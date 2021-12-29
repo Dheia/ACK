@@ -9,7 +9,12 @@
         <div class="text-white text-xs lg:text-sm font-mont font-normal leading-4 mb-2">
           {{ post.summary | striptags | slice(0, 60) | raw  ~ '...' }}
         </div>
-        <a class="text-white text-sm font-sans font-normal uppercase py-1 px-2 bg-transparent border border-white rounded" href="{{ post.url }}">Подробнее</a>
+        <a 
+          href="{{ post.url }}"
+          class="text-white text-sm font-sans font-normal uppercase py-1 px-2 bg-transparent border border-white rounded transition-all duration-200 ease-in hover:bg-white hover:text-black" 
+        >
+          Подробнее
+        </a>
       </div>
     </article>
   </li>

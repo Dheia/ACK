@@ -38,7 +38,7 @@ function onLoadMore() {
 {% set posts = blogPosts.posts %}
 
 <h2 class="text-center text-black text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">{{ this.page.title }}</h2>
-<ul id="all-posts-content" class="grid grid-cols-2 sm:grid-cols-3 auto-rows-[400px] gap-1">
+<ul id="all-posts-content" class="grid grid-cols-2 sm:grid-cols-3 -xs:auto-rows-[185px] auto-rows-[400px] gap-1 container">
   {% partial 'blog/posts' %}
 </ul>
 

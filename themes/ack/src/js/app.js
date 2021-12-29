@@ -1,39 +1,42 @@
-import $ from "jquery";
 import 'lightbox2';
 import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
-
-window.$ = window.jQuery = $;
 
 Swiper.use([Navigation, Pagination, Lazy]);
 
 const documents = new Swiper('.documents-slider', {
   direction: 'horizontal',
-  loop: true,
+  loop: false,
 
   slidesPerView: 2,
+  slidesPerGroup: 2,
   spaceBetween: 5,
   breakpoints: {
     640: {
-      slidesPerView: 3
+      slidesPerView: 3,
+      slidesPerGroup: 3,
     },
     768: {
-      slidesPerView: 4
+      slidesPerView: 4,
+      slidesPerGroup: 4,
     }
   },
-  pagination: {
-    el: '.swiper-pagination'
-  }
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
 const gallery = new Swiper('.gallery-slider', {
-  loop: true,
+  loop: false,
   preloadImages: false,
   lazy: true,
   slidesPerView: 3,
+  slidesPerGroup: 3,
   spaceBetween: 5,
   breakpoints: {
     640: {
       slidesPerView: 4,
+      slidesPerGroup: 4,
       spaceBetween: 15,
     }
   },
@@ -45,10 +48,6 @@ const gallery = new Swiper('.gallery-slider', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
   },
 });
 
