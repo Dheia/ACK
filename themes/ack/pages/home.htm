@@ -24,7 +24,12 @@ function onStart () {
       <div class="text-justify text-white text-xs lg:text-lg font-sans font-normal leading-5 py-1 mb-2">
         {{ this.theme.abouts_description | raw }}
       </div>
-      <a href="{{ this.theme.abouts_details }}" class="relative z-20 block max-w-max mx-auto py-1 px-3 lg:py-2 lg:px-6 text-black text-xs lg:text-lg font-sans font-normal leading-5 bg-white rounded-md shadow-black">Подробнее</a>
+      <a 
+        href="{{ this.theme.abouts_details }}" 
+        class="relative z-20 block max-w-max mx-auto py-2 px-4 lg:py-2 lg:px-6 text-black text-base lg:text-lg font-sans font-normal leading-5 bg-white rounded-md shadow-black transition-all duration-200 ease-in hover:bg-blue hover:text-white hover:shadow-md hover:shadow-white"
+        >
+          Подробнее
+        </a>
     </div>
    </div>
 
@@ -56,17 +61,20 @@ function onStart () {
 
 <section 
   id="nsi-smarteka" 
-  class="py-4 px-5 md:py-6 blackout blackout--gradient-blue bg-no-repeat bg-center bg-cover" 
+  class="py-4 px-5 md:py-6 blackout blackout--blue bg-no-repeat bg-center bg-cover" 
   style="background-image: url('{{ this.theme.nsi_background | media | resize(1920, auto) }}');"
 >
   <div class="container">
-    <h2 class="text-center text-white text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">НСИ Смартека</h2>
-    <p class="text-center text-white font-sans font-normal text-base lg:text-3xl">Смартека- это сервис по поиску лучших практик в различных отраслях для решения социально- экономических задач.</p>
-    <p class="text-center text-white font-sans font-normal text-sm lg:text-2xl mt-1 lg:mt-2">Предназначена для лидеров изменений: глав регионов, их управленческих команд и всех неравнодушных людей.</p>
-    <p class="text-left  text-white font-sans font-normal text-sm lg:text-lg mt-3 md:mt-6">На текущий момент от Мурманской области опубликовано 11 практик, 6 из них внедряется на территории 5 субъектов Российской Федерации. В Мурманской области внедряется 8 практик из других регионов.</p>
+    <h2 class="relative z-20 text-center text-white text-lg lg:text-3xl font-sans font-normal mb-2 lg:mb-4">НСИ Смартека</h2>
+    <p class="relative z-20 text-center text-white font-sans font-normal text-base lg:text-3xl">
+      СМАРТЕКА — это глобальная платформа по обмену и тиражированию эффективных практик и привлекательных решений в сфере социально-экономического развития муниципалитетов и регионов Российской Федерации.
+    </p>
     <div class="relative z-20 flex flex-col md:flex-row gap-6 items-center justify-between mt-6">
-      <a class="w-max flex gap-2 items-center py-2 px-3 bg-white rounded shadow-light-blue" href="{{ this.theme.nsi_details }}">
-        <span class="text-black text-base lg:text-lg font-sans font-normal ">Подробнее</span>
+      <a 
+        href="{{ this.theme.nsi_details }}"
+        class="relative z-20 block py-2 px-4 lg:py-2 lg:px-6 text-black text-base lg:text-lg font-sans font-normal leading-5 bg-white rounded-md shadow-black transition-all duration-200 ease-in hover:bg-blue hover:text-white hover:shadow-md hover:shadow-white"
+      >
+        Подробнее
       </a>
       <a class="w-max flex gap-2 items-center py-2 px-3 bg-blue-dark-100 rounded shadow-black" href="{{ this.theme.site_smarteka }}">
         <span class="text-white text-base lg:text-lg font-sans font-normal">Перейти на сайт Смартека</span>

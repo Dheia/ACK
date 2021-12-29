@@ -1,4 +1,10 @@
-<script src="{{ '/assets/js/app.js' | theme }}"></script>
+<script src="{{ [
+  '/assets/js/app.js',
+  '@jquery',
+  '@framework',
+  '@framework.extras'
+] | theme }}">
+
+</script>
 {% styles %}
 {% scripts %}
-{% framework %}

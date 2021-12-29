@@ -1,6 +1,6 @@
 {% if practices_type == 'list' %}
   {% for category in practices %}
-    <section class="mt-6">
+    <section class="mt-6 container">
       <h2 class="text-center text-lg lg:text-3xl text-black font-sans font-normal py-2 bg-blue-light-20">
         {{ category.title }}
       </h2>
@@ -34,7 +34,7 @@
     </section>
   {% endfor %}
 {% else %}
-<div class="grid grid-cols-2 sm:grid-cols-4 auto-rows-[180px] sm:auto-rows-[295px] gap-1">
+<div class="grid grid-cols-2 sm:grid-cols-4 auto-rows-[180px] sm:auto-rows-[295px] gap-1 container">
   {% for practice in practice_items %}
     <a 
       class="relative group block rounded-lg w-full h-full bg-no-repeat bg-center bg-cover blackout blackout--blue hover:blackout--pink overflow-auto px-2 pt-9" 
